@@ -1,0 +1,23 @@
+{
+  "name": "gitler",
+  "version": "1.0.0",
+  "description": "An command line git tool to handle revisions of project.",
+  "main": "src/application.js",
+  "bin": {
+    "gitler": "src/application-cli.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dareksob/gitler.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dareksob/gitler/issues"
+  },
+  "homepage": "https://github.com/dareksob/gitler#readme"
+}
