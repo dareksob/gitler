@@ -13,8 +13,8 @@
     "type": "git",
     "url": "git+https://github.com/dareksob/gitler.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["command-line", "tool", "git", "release"],
+  "author": "Darius Sobczak<mail@dsobczak.de>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/dareksob/gitler/issues"
