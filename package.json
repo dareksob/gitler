@@ -7,7 +7,7 @@
     "gitler": "src/application-cli.js"
   },
   "scripts": {
-    "release": "node . updatePackage"
+    "release": "node src/application-cli.js updatePackage"
   },
   "repository": {
     "type": "git",

@@ -5,7 +5,7 @@
 
 const fs = require('fs');
 const util = require('util');
-const { shell, getTagVersion } = require('./utility');
+const { shell, getTagVersion, jsonWriter } = require('./utility');
 
 module.exports = class PackageGit {
   /**
@@ -79,25 +79,24 @@ module.exports = class PackageGit {
     const version = await this.version();
 
     return `
-      Git version: ${version}
-      Package version: ${this.package.version}
+Git version: ${version}
+Package version: ${this.package.version}
     `;
   }
 
   /**
    * update package
    *
-   * @returns {Promise<{oldVersion : *, newVersion : string}>}
+   * @returns {string} new version
    */
   async updatePackage() {
     const localPackage = Object.assign({}, this.package);
     const recommendation = await this.versionRecommendation();
     localPackage.version = `${recommendation.newVersion}`;
 
-    const writer = util.promisify(fs.writeFile);
-    await writer(this.packagePath, JSON.stringify(data, null, 2));
+    await jsonWriter(this.packagePath, localPackage);
     this.package = localPackage;
 
-    return recommendation;
+    return localPackage.version;
   }
 };
