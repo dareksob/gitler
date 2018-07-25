@@ -24,7 +24,7 @@ const gitler = require('gitler');
 gitler
     .tag()
     .then(tagModel => {
-        // do what you whant
+        // do what you want
     });
 ````
 
